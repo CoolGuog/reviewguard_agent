@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# 模型文件（太大，不提交）
+*.pt
+*.pkl
+*.bin
+retrained_model/
+
+# 数据集 / 采集数据（太大，不提交）
+data/*.csv
+data/crawled/
+
+# 运行时生成
+data/reports/
+data/reviewguard.db
+logs/
+*.log
+
+# 环境
+venv/
+.env
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
