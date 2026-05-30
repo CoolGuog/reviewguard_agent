@@ -54,12 +54,16 @@ Orchestrator (调度中心)
 ```bash
 pip install -r requirements.txt
 
-# 需要把 train_v2.csv 等数据集放到 data/ 目录下
-# 模型文件 best_geo_poison_detector_v3.pt 和 meta_scaler.pkl 放根目录
+# 数据集在 data/ 目录下，归一化器 meta_scaler.pkl 在根目录
+# 模型权重 .pt 文件超过 GitHub 100MB 限制，需要本地生成：
 
-python demo.py              # 模拟演示，最直观
-python main.py once --products demo   # 从数据集随机采样检测
-python main.py web                    # Web 面板 localhost:5000
+python retrain_model.py --epochs 25 --batch_size 16 --lr 2e-5
+# 训练完成后复制 retrained_model/best_geo_poison_detector_v3.pt 到根目录
+
+# 或者运行 demo.py，它使用生成好的模型（如果有的话）
+python demo.py
+python main.py once --products demo
+python main.py web
 ```
 
 ## 项目结构

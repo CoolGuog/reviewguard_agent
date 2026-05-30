@@ -6,14 +6,11 @@ __pycache__/
 dist/
 build/
 
-# 模型文件（太大，不提交）
+# 大模型权重文件（超过 GitHub 100MB 限制，需本地训练生成）
 *.pt
-*.pkl
-*.bin
 retrained_model/
 
-# 数据集 / 采集数据（太大，不提交）
-data/*.csv
+# 采集数据（运行时生成）
 data/crawled/
 
 # 运行时生成
